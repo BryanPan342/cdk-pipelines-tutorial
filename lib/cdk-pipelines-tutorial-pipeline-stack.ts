@@ -31,6 +31,8 @@ export class CdkPipelinesPipelineStack extends Stack {
 
     pipeline.addApplicationStage(new CdkPipelinesDemoStage(this, 'PreProduction', {
       env: {account: this.account, region: this.region},
-    }))
+    }), {
+      securityCheck: true,
+    });
   }
 }
